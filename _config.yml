@@ -4,6 +4,9 @@ remote_theme: jekyll/minima@8106bd4
 plugins:
   - jekyll-seo-tag
 google_analytics: G-SGVB5NZ2DK
+google:
+  tag_manager:
+    container_id: GTM-5G477GM2
 minima:
   skin: auto
   hide_site_feed_link: true

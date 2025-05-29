@@ -1,13 +1,19 @@
-title: John Doe # your name (or website title) here
+title: Gabriel Melo 
 logo: "/images/logo.png?raw=true" # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
-  First description 
+  Data Analyst with experience in digital analytics, research, marketing and project management.
   <br><br>
-  Second description 
+  I have a Master's degree in Business Administration from the Fluminense Federal University (UFF), with a period of international mobility at the Faculty of Economics of the University of Coimbra (FEUC), an MBA in Business Management and Information Systems from the Fluminense Federal University (UFF) and a bachelor's degree in Information Systems from the Estácio de Sá University (UNESA). I have skills in Python, SQL, R and JavaScript, as well as tools such as Looker Studio, Google Analytics, Google Tag Manager, Big Query and Microsoft Power BI.
   <br><br>
-  <a href="https://www.linkedin.com/in/example/">View My LinkedIn Profile</a> 
+  <a href="https://www.linkedin.com/in/gabriel-melo/">View My LinkedIn Profile</a> 
   
-remote_theme: pages-themes/minimal@v0.2.0
+remote_theme: jekyll/minima@8106bd4
 plugins:
 - jekyll-remote-theme
-google_analytics: UA-000000-0 # your Google Analytics tracking ID here
+google_analytics: G-000000-0 # your Google Analytics tracking ID here
+plugins:
+  - jekyll-seo-tag
+
+minima:
+  skin: auto
+  hide_site_feed_link: true

@@ -3,7 +3,7 @@ author: Gabriel Melo
 email: gabrielcm@duck.com
 description: >
   Portfolio of Gabriel Melo, Data Analyst with skills in Python, Web Scraping, Digital Analytics, and Automation.
-theme: jekyll/minima@8106bd4
+theme: minima
 minima:
   skin: auto
   social_links:

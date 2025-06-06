@@ -7,11 +7,10 @@ body {
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 70px; /* Adjust to your navbar height for anchor links */
-                          /* This helps ensure section titles aren't hidden by the sticky navbar */
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 600; /* Slightly bolder headings */
+  font-weight: 600;
 }
 
 /* Navbar Adjustments */
@@ -21,45 +20,41 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Theme Switch Styles in Navbar */
-.navbar .form-switch { /* Target form-switch specifically within the navbar */
-  padding-left: 0; /* Reset padding if default form-check padding is an issue */
+.navbar .form-switch {
+  padding-left: 0;
 }
 
 .navbar .form-switch .form-check-input {
   cursor: pointer;
-  width: 2.75em;  /* Make the switch a bit wider */
-  height: 1.45em; /* Make the switch a bit taller */
-  margin-left: 0; /* Remove default left margin if label comes after or for tighter control */
-  margin-right: 0.5rem; /* Space between switch and label */
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280,0,0,0.25%29'/%3e%3c/svg%3e"); /* Default Bootstrap icon color adjustment */
+  width: 2.75em;
+  height: 1.45em;
+  margin-left: 0;
+  margin-right: 0.5rem;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280,0,0,0.25%29'/%3e%3c/svg%3e");
 }
 
 .navbar .form-switch .form-check-input:focus {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%2386b7fe'/%3e%3c/svg%3e"); /* Focus color */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%2386b7fe'/%3e%3c/svg%3e");
 }
 
 .navbar .form-switch .form-check-input:checked {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e"); /* Checked icon color (white on primary) */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
 }
 
 
 .navbar .form-switch .form-check-label {
   cursor: pointer;
-  color: var(--bs-navbar-color); /* Ensures label color matches navbar text */
-  line-height: 1.45em;          /* Align icon vertically with the switch height */
-  padding-left: 0;              /* If the icon is the only content in the label */
+  color: var(--bs-navbar-color);
+  line-height: 1.45em;
+  padding-left: 0;
 }
 
 .navbar .form-switch .form-check-label .bi {
-  vertical-align: middle; /* Align icon nicely */
-  font-size: 1.15rem;       /* Adjust icon size if needed */
+  vertical-align: middle;
+  font-size: 1.15rem;
 }
 
 /* Header */
-header.bg-primary {
-  /* You can customize the primary color via Bootstrap variables or override here */
-  /* background-color: #0056b3 !important; */ /* Example darker blue */
-}
 header .btn-light i {
   margin-right: 0.25rem;
 }
@@ -69,19 +64,75 @@ header .btn-light i {
   width: 150px;
   height: 150px;
   object-fit: cover;
-  border: 3px solid #fff; /* Example border, adjust for theme */
+  border: 3px solid #fff;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* Project Cards */
-.project-card-img {
-  height: 200px; /* Adjust as needed */
-  object-fit: cover; /* Ensures the image covers the area without distortion */
+/* ======================= NEW CSS FOR HORIZONTAL PROJECTS ======================= */
+.horizontal-scroll-wrapper {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: hidden; /* Hide vertical scrollbar if any */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  padding-bottom: 1rem; /* Space for the scrollbar so it doesn't overlap content */
+  scrollbar-width: thin; /* Firefox scrollbar */
+  scrollbar-color: #888 #f1f1f1; /* Firefox scrollbar */
 }
+
+/* Custom scrollbar styling for Webkit browsers (Chrome, Safari) */
+.horizontal-scroll-wrapper::-webkit-scrollbar {
+  height: 8px; /* Height of the scrollbar */
+}
+.horizontal-scroll-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track color */
+  border-radius: 10px;
+}
+.horizontal-scroll-wrapper::-webkit-scrollbar-thumb {
+  background: #888; /* Thumb color */
+  border-radius: 10px;
+}
+.horizontal-scroll-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Thumb hover color */
+}
+
+/* Dark theme scrollbar adjustments */
+[data-bs-theme="dark"] .horizontal-scroll-wrapper {
+  scrollbar-color: #666 #333; /* Firefox scrollbar dark */
+}
+[data-bs-theme="dark"] .horizontal-scroll-wrapper::-webkit-scrollbar-track {
+  background: #2b3035; /* Dark track color */
+}
+[data-bs-theme="dark"] .horizontal-scroll-wrapper::-webkit-scrollbar-thumb {
+  background: #555; /* Dark thumb color */
+}
+[data-bs-theme="dark"] .horizontal-scroll-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #777; /* Dark thumb hover color */
+}
+
+.projects-container {
+  /* d-flex and flex-nowrap are handled by Bootstrap classes in the HTML */
+}
+
+.project-card-wrapper {
+  flex: 0 0 auto; /* Prevent cards from shrinking or growing */
+  width: 90%; /* On small screens, one card is almost full width */
+  margin-right: 1.5rem; /* Space between cards */
+}
+.project-card-wrapper:last-child {
+  margin-right: 0; /* No margin on the last card */
+}
+
+/* Set card widths for different screen sizes */
+@media (min-width: 576px) {
+  .project-card-wrapper {
+    width: 380px; /* A fixed width can look good on medium screens and up */
+  }
+}
+/* ======================= END NEW CSS ======================= */
+
 
 .card {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  border: 1px solid var(--bs-border-color); /* Ensure border adapts to theme */
+  border: 1px solid var(--bs-border-color);
 }
 
 .card:hover {
@@ -95,10 +146,9 @@ header .btn-light i {
 /* Skills Section */
 #skills .badge {
   padding: 0.5em 0.75em;
-  /* font-size: 0.9rem; Replaced by fs-6 utility class in HTML */
 }
-.badge.fs-6 { /* Bootstrap's fs-6 is usually for text, badges might need explicit font-size */
-    font-size: 0.95rem !important; /* Or adjust as desired */
+.badge.fs-6 {
+    font-size: 0.95rem !important;
 }
 
 /* Experience Accordion */
@@ -107,17 +157,21 @@ header .btn-light i {
   background-color: var(--bs-accordion-active-bg);
 }
 .accordion-button:focus {
-  box-shadow: none; /* Removes default focus outline if desired */
+  box-shadow: none;
 }
 .accordion-item {
-    background-color: var(--bs-accordion-bg); /* Ensures accordion items adapt to theme */
-    border: 1px solid var(--bs-accordion-border-color); /* Ensures accordion borders adapt to theme */
+    background-color: var(--bs-accordion-bg);
+    border: 1px solid var(--bs-accordion-border-color);
 }
 
 /* Education & Certifications */
 #education-certs .btn-outline-secondary i {
   margin-right: 0.3rem;
 }
+#certificationsAccordion .accordion-body ul {
+  padding-left: 0.5rem; /* Less padding inside the accordion body */
+}
+
 
 /* Contact Section */
 #contact .btn i {
@@ -129,35 +183,11 @@ footer p {
   margin-bottom: 0;
 }
 
-/* Dark Theme Specific Adjustments (Bootstrap data-bs-theme handles most) */
+/* Dark Theme Specific Adjustments */
 [data-bs-theme="dark"] .profile-photo {
-  border-color: #444; /* Darker border for dark theme */
-}
-
-[data-bs-theme="dark"] .card {
-   /* Bootstrap handles most card styling for dark theme well */
+  border-color: #444;
 }
 
 [data-bs-theme="dark"] .card:hover {
-  box-shadow: 0 8px 16px rgba(255,255,255,0.05); /* Lighter shadow for dark theme */
+  box-shadow: 0 8px 16px rgba(255,255,255,0.05);
 }
-
-/*
-  Section padding for sticky navbar (alternative to html scroll-padding-top):
-  If you prefer this method, comment out scroll-padding-top on the html element
-  and uncomment the rules below.
-*/
-/*
-section {
-  padding-top: 70px;
-  margin-top: -70px;
-}
-header ~ main section:first-of-type {
-    padding-top: 70px;
-    margin-top: -70px;
-}
-#about {
-    padding-top: 70px;
-    margin-top: -70px;
-}
-*/

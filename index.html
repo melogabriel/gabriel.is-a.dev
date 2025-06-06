@@ -70,54 +70,102 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <section id="projects" class="mb-5">
     <h2 class="mb-4 text-center">Projects</h2>
-    <p class="text-center text-muted mb-4">
-    </p>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-      <div class="col" data-aos="fade-up">
-        <div class="card h-100">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Google Maps Scraper</h5>
-            <p class="card-text">Web and MacOS App to scrape data from Google Maps. Extracts data such as the name, address, phone number, website URL, rating, reviews number, latitude and longitude, reviews, email and more for each place.</p>
-            <p class="card-text"><small class="text-muted"><strong>Technologies:</strong> Go, Golang, PLpgSQL, HTML/CSS, Docker. </small></p>
-            <div class="mt-auto">
-              <a href="https://github.com/melogabriel/google-maps-scraper" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-github"></i> View on GitHub
-              </a>
+    <div class="horizontal-scroll-wrapper" data-aos="fade-up">
+      <div class="projects-container d-flex flex-nowrap">
+        
+        <div class="project-card-wrapper">
+          <div class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Google Maps Scraper</h5>
+              <p class="card-text">Web and MacOS App to scrape data from Google Maps. Extracts name, address, phone number, website, rating, reviews, email and more for each place.</p>
+              <p class="card-text"><small class="text-muted"><strong>Technologies:</strong> Go, Golang, PLpgSQL, HTML/CSS, Docker. </small></p>
+              <div class="mt-auto">
+                <a href="https://github.com/melogabriel/google-maps-scraper" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-github"></i> View on GitHub
+                </a>
               </div>
-          </div>
-        </div>
-      </div>
-      <div class="col" data-aos="fade-up" data-aos-delay="100">
-        <div class="card h-100">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Basket Analysis Apriori</h5>
-            <p class="card-text">This project performs association analysis on a sales dataset, using the Apriori algorithm. The dataset is loaded from an Excel file, and a basket of items is created for each transaction. The Apriori algorithm is then applied to find frequent itemsets and association rules based on the support, confidence, and lift metrics. Finally, the top 10 associations based on lift are plotted in a scatter plot, and the results are saved to an Excel file.</p>
-            <p class="card-text"><small class="text-muted"><strong>Technologies:</strong> Python, Jupyter Notebook, Pandas, Apriori Algorithm, Mixtend, Looker Studio.</small></p>
-            <div class="mt-auto">
-              <a href="https://github.com/melogabriel/basket-analysis-apriori" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-github"></i> View on GitHub
-              </a>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col" data-aos="fade-up" data-aos-delay="200">
-        <div class="card h-100">
-           <div class="card-body d-flex flex-column">
-            <h5 class="card-title">LangChain + ChatGPT for Data Analysis</h5>
-            <p class="card-text">This is a project that uses the LangChain library and OpenAI's ChatGPT API to perform data analysis on a dataset. Disclaimer: This project was made before OpenAI released Code Interpreter on ChatGPT Plus. With similar functions.</p>
-            <p class="card-text"><small class="text-muted"><strong>Technologies:</strong> Python, Jupyter Notebook, Pandas, OpenAI API, Colab Notebook, LangChain.</small></p>
-            <div class="mt-auto">
-              <a href="https://github.com/melogabriel/langchain-chatgpt" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-github"></i> View on GitHub
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-  </section>
 
+        <div class="project-card-wrapper">
+          <div class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Basket Analysis Apriori</h5>
+              <p class="card-text">Performs association analysis on a sales dataset using the Apriori algorithm to find frequent itemsets and association rules based on support, confidence, and lift.</p>
+              <p class="card-text"><small class="text-muted"><strong>Technologies:</strong> Python, Jupyter, Pandas, Mixtend, Looker Studio.</small></p>
+              <div class="mt-auto">
+                <a href="https://github.com/melogabriel/basket-analysis-apriori" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-github"></i> View on GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-wrapper">
+          <div class="card h-100">
+             <div class="card-body d-flex flex-column">
+              <h5 class="card-title">LangChain + ChatGPT for Data Analysis</h5>
+              <p class="card-text">Uses the LangChain library and OpenAI's ChatGPT API to perform data analysis on a dataset, similar to OpenAI's Code Interpreter.</p>
+              <p class="card-text"><small class="text-muted"><strong>Technologies:</strong> Python, Jupyter, Pandas, OpenAI API, LangChain.</small></p>
+              <div class="mt-auto">
+                <a href="https://github.com/melogabriel/langchain-chatgpt" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-github"></i> View on GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card-wrapper">
+          <div class="card h-100">
+             <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Shiny WebApp Finances</h5>
+              <p class="card-text">This is a Shiny web application that allows you to analyze stock data for Brazilian assets. The application retrieves data from Yahoo Finance and provides interactive charts for the selected asset.</p>
+              <p class="card-text"><small class="text-muted"><strong>Technologies:</strong> R, Shiny, Yahoo Finance API.</small></p>
+              <div class="mt-auto">
+                <a href="https://github.com/melogabriel/shiny-webapp-finances" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-github"></i> View on GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-wrapper">
+          <div class="card h-100">
+             <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Google Search Scraper</h5>
+              <p class="card-text">A Python script that fetches the top search results from Google for a given list of queries and outputs them in TSV format for easy use in spreadsheets.</p>
+              <p class="card-text"><small class="text-muted"><strong>Technologies:</strong> Python, Requests, BeautifulSoup.</small></p>
+              <div class="mt-auto">
+                <a href="https://github.com/melogabriel/googlesearch-scrapper" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-github"></i> View on GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-wrapper">
+          <div class="card h-100">
+             <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Shop Status Monitor</h5>
+              <p class="card-text">An automation project that monitors the availability of Tinfoil shops using GitHub Actions and reports the status.</p>
+              <p class="card-text"><small class="text-muted"><strong>Technologies:</strong> Python, GitHub Actions, Automation.</small></p>
+              <div class="mt-auto">
+                <a href="https://github.com/melogabriel/tinfoil-shops-status" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-github"></i> View on GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
   <section id="skills" class="mt-5 mb-5" data-aos="fade-right">
     <h2 class="text-center mb-4">Skills</h2>
     <div class="row">
@@ -349,7 +397,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   </li>
                   <li class="mb-3">
                     <strong>Digital Business Metrics</strong><br>
-                    PM3<br>
+                    PM3 (Kajabi)<br>
                     <a href="https://app.kajabi.com/certificates/70000fb0" class="btn btn-outline-secondary btn-sm mt-1" target="_blank" rel="noopener noreferrer"><i class="bi bi-patch-check-fill"></i> View Credential</a>
                   </li>
                 </ul>

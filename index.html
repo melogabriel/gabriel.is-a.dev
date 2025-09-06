@@ -458,48 +458,100 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
 <script>
+  // 1. Your existing AOS initialization
   AOS.init({
-    duration: 800, 
-    once: true,    
+    duration: 800,
+    once: true,
   });
 
+  // 2. Your existing Theme Switcher code
   const themeSwitchCheckbox = document.getElementById('themeSwitchCheckbox');
   const themeSwitchLabel = document.getElementById('themeSwitchLabel');
   const htmlEl = document.documentElement;
   const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+  // 3. The new tsparticles configuration
+  function loadParticles(theme) {
+    const isDark = theme === 'dark';
+    
+    // Define colors for light and dark themes
+    const particleColor = isDark ? "#ffffff" : "#000000";
+    const linkColor = isDark ? "#ffffff" : "#000000";
+    const backgroundColor = isDark ? "#212529" : "#f8f9fa"; // Matches Bootstrap dark/light backgrounds
+
+    tsParticles.load("tsparticles", {
+      "fullScreen": { "enable": true, "zIndex": -1 },
+      "background": { "color": { "value": backgroundColor } },
+      "particles": {
+        "number": { "value": 80, "density": { "enable": true } },
+        "color": { "value": particleColor },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": { "min": 1, "max": 3 } },
+        "links": {
+          "enable": true,
+          "distance": 150,
+          "color": linkColor,
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "none",
+          "outModes": { "default": "out" }
+        }
+      },
+      "interactivity": {
+        "events": {
+          "onHover": { "enable": true, "mode": "grab" },
+          "onClick": { "enable": true, "mode": "push" }
+        },
+        "modes": {
+          "grab": { "distance": 140, "links": { "opacity": 1 } },
+          "push": { "quantity": 4 }
+        }
+      }
+    });
+  }
 
   function applyTheme(theme) {
     htmlEl.setAttribute('data-bs-theme', theme);
     if (themeSwitchCheckbox) {
         themeSwitchCheckbox.checked = (theme === 'dark');
     }
-    if (themeSwitchLabel) { 
+    if (themeSwitchLabel) {
         themeSwitchLabel.innerHTML = (theme === 'dark') ? '<i class="bi bi-sun-fill"></i>' : '<i class="bi bi-moon-stars-fill"></i>';
     }
+    // Load particles with the correct theme
+    loadParticles(theme);
   }
 
-  let initialTheme = 'light'; 
+  let initialTheme = 'light';
   try {
     const storedTheme = localStorage.getItem('theme');
     if (storedTheme) {
-        initialTheme = storedTheme; 
-    } else if (prefersDarkScheme.matches) { 
+        initialTheme = storedTheme;
+    } else if (prefersDarkScheme.matches) {
         initialTheme = 'dark';
     }
   } catch (e) {
-    console.error("Could not access localStorage or matchMedia for theme preference.", e);
+    console.error("Could not access localStorage for theme preference.", e);
   }
-  applyTheme(initialTheme); 
+  applyTheme(initialTheme);
 
   if (themeSwitchCheckbox) {
     themeSwitchCheckbox.addEventListener('change', function() {
         const newTheme = this.checked ? 'dark' : 'light';
-        localStorage.setItem('theme', newTheme); 
+        localStorage.setItem('theme', newTheme);
         applyTheme(newTheme);
     });
   }
-  
+
   try {
     prefersDarkScheme.addEventListener('change', (e) => {
         if (!localStorage.getItem('theme')) {
@@ -507,21 +559,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         }
     });
   } catch (e) {
-    try {
-        prefersDarkScheme.addListener((e) => { 
-            if (!localStorage.getItem('theme')) {
-                applyTheme(e.matches ? 'dark' : 'light');
-            }
-        });
-    } catch (e2) {
-        console.error("Error setting up OS theme change listener.", e2);
-    }
+    console.error("Error setting up OS theme change listener.", e);
   }
 
+  // 4. Your existing Copyright Year code
   const currentYearSpan = document.getElementById('currentYear');
-  if (currentYearSpan) { 
+  if (currentYearSpan) {
     currentYearSpan.textContent = new Date().getFullYear();
   }
 </script>
+
 </body>
 </html>

@@ -4,6 +4,17 @@ body {
   line-height: 1.6;
 }
 
+/* ======================= NEW CSS FOR PARTICLE BACKGROUND ======================= */
+#tsparticles {
+  position: fixed; /* Keeps the background fixed in place, even when you scroll */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1; /* This is the most important part! It places the canvas behind all other content. */
+}
+/* ======================= END NEW CSS ======================= */
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 70px; /* Adjust to your navbar height for anchor links */

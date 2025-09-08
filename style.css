@@ -65,9 +65,10 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.15rem;
 }
 
-/* Header */ 
-header .btn-light i {
-  margin-right: 0.25rem;
+/* Header */
+/* This new rule makes the header's background transparent. The !important is necessary to override Bootstrap's default style. */
+header.bg-primary {
+  background-color: transparent !important;
 }
 
 /* About Me Section */

@@ -71,6 +71,21 @@ header.bg-primary {
   background-color: transparent !important;
 }
 
+/* Change header text color for light mode to ensure it's readable */
+header.bg-primary h1, header.bg-primary p.lead {
+    color: #212529 !important; /* A standard dark color, overriding .text-white */
+}
+
+/* Explicitly set header text back to white for dark mode */
+[data-bs-theme="dark"] header.bg-primary h1,
+[data-bs-theme="dark"] header.bg-primary p.lead {
+    color: #ffffff !important;
+}
+
+header .btn-light i {
+  margin-right: 0.25rem;
+}
+
 /* About Me Section */
 .profile-photo {
   width: 150px;

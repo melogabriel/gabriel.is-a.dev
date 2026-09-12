@@ -1,8 +1,8 @@
-# Gabriel Melo - Data Analyst Portfolio
+# Gabriel Melo - Data Engineer Portfolio
 
 This repository contains the source code for my personal portfolio website, live at [gabriel.is-a.dev](https://gabriel.is-a.dev/).
 
-This is a fully responsive, single-page website designed to showcase my projects, skills, and professional experience as a Data Analyst. It features a clean, modern design with an interactive particle background and a dark/light mode theme switcher.
+This is a fully responsive, single-page website designed to showcase my projects, skills, and professional experience as a Data Engineer. It features a clean, modern design with an interactive particle background and a dark/light mode theme switcher.
 
 ## Features
 
@@ -48,20 +48,4 @@ This website is built from the ground up using modern web technologies.
 
 * **GitHub Pages:** Used for hosting the live website.
 
-## How to Use
 
-To run this website locally, you can either:
-
-1. Fork/clone the repository and open the `index.html` file directly in your browser.
-
-2. Use a simple local server (like the "Live Server" extension in VSCode) to view the site.
-   
-```
-# Clone the repository
-git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
-
-# Navigate to the directory
-cd your-repo-name
-
-# Open index.html in your browser or serve it locally
-```
